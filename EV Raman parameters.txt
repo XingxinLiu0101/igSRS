@@ -1,0 +1,13 @@
+5 μL of the concentrated EVs were laid on a calcium fluoride disk
+spectral range 600–1800 cm–1 and 2600–3200 cm–1
+parameters: 532 nm laser line; 50× objective; grating 1800; 400 μm entrance slit; 30 s of acquisition for 2 repetitions.
+Twenty-five spectra per sample were collected randomly at the border of the EV drops, spectra with no signal or saturated signals were not considered for the subsequent analysis. 
+
+Freshly isolated EVs were analysed by means of Raman microspectroscopy (LabRAM Aramis, Horiba Jobin Yvon S.A.S, Lille, France) equipped with a diode-pumped solid-state laser operating at 532 nm and a Peltier-cooled CCD detector. 5–10 µl drops of EV suspension were deposited on a calcium fluoride slide and allowed to air dry. All of the measurements were performed with 50× objective (NA 0.75, Olympus, Tokyo, Japan), 1800 grooves/mm diffraction grating, 400 µm entrance slit, and confocal mode (600 µm pinhole) in the spectral ranges 500–1800 cm−1 and 2600–3200 cm−1. Accumulation times were 2 × 10 s per spectrum.
+The Raman shift was calibrated automatically using LabSpec 6 software (Horiba) using zero order line and Si line of a Si reference sample. In order to capture the spectra randomly, maps of about 150 µm2 (with lateral steps of 20–30 µm) were acquired in the centre and at the borders of the air-dried drops. Before analysing the data, a two-class hierarchical clustering analysis (HCA) of the Raman maps was made in order to distinguish the spectra relating to vesicles from those related to background. At least 10 independent replicates of the Raman spectra were obtained for every donor of the different cell types.
+
+可以在干燥以后的coffee ring上测信号，用水镜，干燥的EV倒扣；
+LDA采样数一定大于维度；
+多用一些可能的纯物质光谱unmixing;
+SEC分离的EV更纯，信噪比更高；
+可以测试protein/lipid ratio；
