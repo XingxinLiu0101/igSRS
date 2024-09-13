@@ -1,9 +1,9 @@
-//	SIRIS generation with 2 SRS and 1 FIS
-	identifier1 = "channel1";	//channel1 source image name
-	Color1 = "Green";		//channel1 will be colored as Color1
-	identifier2 = "channel2";   //channel2 source image name
-	Color2 = "Magenta";		//channel2 will be colored as Color2
-	identifier3 = "FIS";
+//	SIRIS generation with 2 SRS and 1 ELIS images
+	identifier1 = "Species1.tif";	//Species1 source image name
+	Color1 = "Green";		//Species1 will be colored as Color1
+	identifier2 = "Species2.tif";   //Species2 source image name
+	Color2 = "Magenta";		//Species2 will be colored as Color2
+	identifier3 = "ELIS.tif";
 	BlurRange = 0.5;
 
 //	Select the target images
@@ -20,17 +20,17 @@
 			channel2title = getTitle();			
 		}
 		if (matches(imageTitle, "(.*)"+identifier3+"(.*)")) {
-			FIStitle = getTitle();			
+			ELIStitle = getTitle();			
 		}
 	}
 	setBatchMode(false);
 
 //
-	selectWindow(FIStitle);			
+	selectWindow(ELIStitle);			
 	resetMinAndMax();
-	c3=substring(FIStitle,0,lengthOf(FIStitle)-4);
+	c3=substring(ELIStitle,0,lengthOf(ELIStitle)-4);
 	run("Duplicate...", "title="+c3+"copy");
-	FIStitle = c3+"copy";
+	ELIStitle = c3+"copy";
 	rescale();
 	selectWindow(channel1title);	 	
 	resetMinAndMax();
@@ -72,10 +72,10 @@
 	imageCalculator("Divide create", channel2title,"sum");
 	rename("2/sum");
 
-	imageCalculator("Multiply create", FIStitle,"1/sum");
+	imageCalculator("Multiply create", ELIStitle,"1/sum");
 	rename("channel1");
 	run(Color1);
-	imageCalculator("Multiply create", FIStitle,"2/sum");
+	imageCalculator("Multiply create", ELIStitle,"2/sum");
 	rename("channel2");
 	run(Color2);
 	selectWindow("channel1");
@@ -92,9 +92,9 @@
 	selectWindow("channel2");
 	setMinAndMax(med2, scale);
 	run("Merge Channels...", "c1=channel1 c2=channel2 create");
-	close(channel1title);close(channel2title);close(FIStitle);
+	close(channel1title);close(channel2title);close(ELIStitle);
 	close("sum");close("1/sum");close("2/sum");
-
+	
 /****************************************************************************/
 	function rescale() {
 		min = getValue("Min");
@@ -115,4 +115,3 @@
 		run("Gaussian Blur...", "sigma="+BlurRange);
 		}
 	}
-
