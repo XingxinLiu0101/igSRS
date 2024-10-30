@@ -1,9 +1,9 @@
-//	SIRIS generation with 2 SRS and 1 ELIS images
+//	FI-SRS generation with 2 SRS and 1 FIS images
 	identifier1 = "Species1.tif";	//Species1 source image name
 	Color1 = "Green";		//Species1 will be colored as Color1
 	identifier2 = "Species2.tif";   //Species2 source image name
 	Color2 = "Magenta";		//Species2 will be colored as Color2
-	identifier3 = "ELIS.tif";
+	identifier3 = "FIS.tif";
 	BlurRange = 0.5;
 
 //	Select the target images
@@ -20,17 +20,17 @@
 			channel2title = getTitle();			
 		}
 		if (matches(imageTitle, "(.*)"+identifier3+"(.*)")) {
-			ELIStitle = getTitle();			
+			FIStitle = getTitle();			
 		}
 	}
 	setBatchMode(false);
 
 //
-	selectWindow(ELIStitle);			
+	selectWindow(FIStitle);			
 	resetMinAndMax();
-	c3=substring(ELIStitle,0,lengthOf(ELIStitle)-4);
+	c3=substring(FIStitle,0,lengthOf(FIStitle)-4);
 	run("Duplicate...", "title="+c3+"copy");
-	ELIStitle = c3+"copy";
+	FIStitle = c3+"copy";
 	rescale();
 	selectWindow(channel1title);	 	
 	resetMinAndMax();
