@@ -1,4 +1,4 @@
-//	FI-SRS generation with 2 SRS and 1 FIS images
+//	SRIS generation with 2 SRS and 1 FIS images
 	identifier1 = "Species1.tif";	//Species1 source image name
 	Color1 = "Green";		//Species1 will be colored as Color1
 	identifier2 = "Species2.tif";   //Species2 source image name
@@ -72,10 +72,10 @@
 	imageCalculator("Divide create", channel2title,"sum");
 	rename("2/sum");
 
-	imageCalculator("Multiply create", ELIStitle,"1/sum");
+	imageCalculator("Multiply create", FIStitle,"1/sum");
 	rename("channel1");
 	run(Color1);
-	imageCalculator("Multiply create", ELIStitle,"2/sum");
+	imageCalculator("Multiply create", FIStitle,"2/sum");
 	rename("channel2");
 	run(Color2);
 	selectWindow("channel1");
@@ -92,7 +92,7 @@
 	selectWindow("channel2");
 	setMinAndMax(med2, scale);
 	run("Merge Channels...", "c1=channel1 c2=channel2 create");
-	close(channel1title);close(channel2title);close(ELIStitle);
+	close(channel1title);close(channel2title);close(FIStitle);
 	close("sum");close("1/sum");close("2/sum");
 	
 /****************************************************************************/
