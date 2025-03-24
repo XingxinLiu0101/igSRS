@@ -1,4 +1,4 @@
-//	SIRIS generation with 2 SRS and 1 FIS images
+//	igSRS generation with 2 SRS and 1 FIS images
 	identifier1 = "Species1.tif";	//Species1 source image name
 	Color1 = "Green";		//Species1 will be colored as Color1
 	identifier2 = "Species2.tif";   //Species2 source image name
